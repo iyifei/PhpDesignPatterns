@@ -1,0 +1,27 @@
+{
+  "name": "PhpDesignPatterns",
+  "description": "php设计模式代码示例",
+  "keywords": [
+    "php",
+    "php design patterns",
+    "php设计模式"
+  ],
+  "homepage": "https://github.com/iyifei/PhpDesignPatterns",
+  "authors": [
+    {
+      "name": "minyifei",
+      "homepage": "http://wiki.minyifei.cn"
+    }
+  ],
+  "require": {
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Demo\\": "src/",
+      "Test\\": "tests/"
+    }
+  }
+}
