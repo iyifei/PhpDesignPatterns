@@ -17,8 +17,9 @@ class SingletonTest extends TestCase
 
         $firstClass = Singleton::getInstance();
         $secondClass = Singleton::getInstance();
-
+        //判断是否为单例类
         $this->assertInstanceOf(Singleton::class,$firstClass);
+        //判断是否为同一个实例
         $this->assertSame($firstClass,$secondClass);
     }
 
