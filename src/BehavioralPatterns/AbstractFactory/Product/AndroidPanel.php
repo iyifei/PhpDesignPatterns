@@ -1,7 +1,7 @@
 <?php
 /**
  * Class [AndroidPanel]
- * 请描述类的功能
+ * android面板
  * author minyifei
  * date 2019/2/15
  */
