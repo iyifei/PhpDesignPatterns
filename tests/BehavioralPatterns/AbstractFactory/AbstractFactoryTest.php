@@ -8,36 +8,33 @@
 
 namespace Test\BehavioralPatterns\AbstractFactory;
 
-use Demo\BehavioralPatterns\AbstractFactory\HtmlFactory;
-use Demo\BehavioralPatterns\AbstractFactory\HtmlText;
-use Demo\BehavioralPatterns\AbstractFactory\JsonFactory;
-use Demo\BehavioralPatterns\AbstractFactory\JsonText;
+use Demo\BehavioralPatterns\AbstractFactory\Factory\AndroidFactory;
+use Demo\BehavioralPatterns\AbstractFactory\Factory\IosFactory;
+use Demo\BehavioralPatterns\AbstractFactory\Product\AndroidButton;
+use Demo\BehavioralPatterns\AbstractFactory\Product\AndroidPanel;
+use Demo\BehavioralPatterns\AbstractFactory\Product\IosButton;
+use Demo\BehavioralPatterns\AbstractFactory\Product\IosPanel;
 use PHPUnit\Framework\TestCase;
 
 class AbstractFactoryTest extends TestCase
 {
 
-    //测试html工场生成的HtmlText
-    public function testCreateHtmlText(){
-        $factory = new HtmlFactory();
-        $htmlStr = '<html></html>';
-        $text = $factory->createText($htmlStr);
+    public function testAndroid()
+    {
+        $factory = new AndroidFactory();
+        $this->assertInstanceOf(AndroidButton::class, $factory->createButton());
+        $this->assertInstanceOf(AndroidPanel::class, $factory->createPanel());
 
-        $this->assertInstanceOf(HtmlText::class,$text);
-        $this->assertEquals($htmlStr,$text->parseText());
+        $this->assertEquals('Android:Button',$factory->createButton()->getName());
     }
 
+    public function testIos()
+    {
+        $factory = new IosFactory();
+        $this->assertInstanceOf(IosButton::class, $factory->createButton());
+        $this->assertInstanceOf(IosPanel::class, $factory->createPanel());
 
-    //测试json工场生成的JsonText
-    public function testCreateJsonText(){
-        $factory = new JsonFactory();
-        $jsonStr = '{"name":"minyifei"}';
-        $json = $factory->createText($jsonStr);
-
-
-        $this->assertInstanceOf(JsonText::class,$json);
-        $obj = $json->parseText();
-        $this->assertEquals($obj['name'],'minyifei');
+        $this->assertEquals('IOS#Button',$factory->createButton()->getName());
     }
 
 }
