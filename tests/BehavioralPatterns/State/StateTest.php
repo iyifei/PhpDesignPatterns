@@ -1,19 +1,19 @@
 <?php
 /**
- * Class [ResponsibilitiesTest]
- * 责任链模式单元测试
+ * Class [StateTest]
+ * 状态模式单元测试
  * author minyifei
  * date 2019/2/18
  */
 
-namespace Test\BehavioralPatterns\Responsibilities;
+namespace Test\BehavioralPatterns\State;
 
 
-use Demo\BehavioralPatterns\Responsibilities\GroupLeader;
-use Demo\BehavioralPatterns\Responsibilities\Staff;
+use Demo\BehavioralPatterns\State\GroupLeader;
+use Demo\BehavioralPatterns\State\Staff;
 use PHPUnit\Framework\TestCase;
 
-class ResponsibilitiesTest extends TestCase
+class StateTest extends TestCase
 {
 
     public function testResponsibilities()
