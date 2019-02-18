@@ -6,7 +6,7 @@
  * date 2019/2/18
  */
 
-namespace Demo\BehavioralPatterns\Responsibilities;
+namespace Demo\BehavioralPatterns\State;
 
 
 class GroupLeader implements Leave
